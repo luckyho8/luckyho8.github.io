@@ -104,8 +104,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* ---------- Playables ---------- */
 .phones {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
   align-items: start;
 }
 .card { display: grid; gap: 10px; justify-items: start; }
@@ -141,6 +141,20 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   pointer-events: none;
 }
 .phone.is-loaded .phone__placeholder { display: none; }
+.phone__start {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  background: #101114;
+}
+.phone__start:hover { color: var(--accent); }
+.phone[data-click-to-start]:not(.is-started) .phone__placeholder { display: none; }
+.phone.is-started .phone__start { display: none; }
 .phone__island {
   position: absolute;
   top: 16px;
@@ -227,10 +241,17 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   border-radius: 10px;
   background: #000;
 }
+.video-modal__yt { width: min(960px, calc(100vw - 32px)); }
+.video-modal [hidden] { display: none; }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1280px) {
+  .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 40px; }
+  .phone { max-width: 320px; }
+}
+
 @media (max-width: 1100px) {
-  .phones { gap: 24px; }
+  .phones { gap: 48px 24px; }
   .phone { border-radius: 36px; padding: 8px; }
   .phone__screen { border-radius: 28px; }
 }

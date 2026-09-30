@@ -28,7 +28,8 @@
 ├── playables/
 │   ├── BallSort_Lv79_AppLovin.html
 │   ├── GermyPop_Lv5_AppLovin.html
-│   └── Wood_Lv6_AppLovin.html
+│   ├── Wood_Lv6_AppLovin.html
+│   └── Wool_Lv1_AppLovin_build.html
 ├── videos/
 │   ├── ballsort.mp4
 │   ├── germypop.mp4
@@ -51,13 +52,14 @@
 - 히어로 하단에 "Playables ↓" 정도의 스크롤 유도.
 
 ### 2. Playables (AppLovin 대응 단일 HTML)
-폰 프레임 3개 가로 배치. 각 카드: 폰 프레임(iframe) / 게임명 / 담당 범위 / 스토어 링크 / 홍보영상(있는 경우).
+폰 프레임 4개 가로 배치 (1280px 이하 2열, 900px 이하 1열). 각 카드: 폰 프레임(iframe) / 게임명 / 담당 범위 / 스토어 링크 / 홍보영상(있는 경우).
 
 | # | 게임 | 플레이어블 파일 | 영상 | 스토어 | 담당 / 설명 |
 |---|---|---|---|---|---|
 | 1 | **Ball Sort** | `BallSort_Lv79_AppLovin.html` | `videos/ballsort.mp4` | https://play.google.com/store/apps/details?id=com.doubleugames.ballsort.vms&hl=ko | 첫 바이브코딩 프로젝트. 기획·스테이지 레벨디자인부터 개발·출시까지 전 과정 단독 진행. AppLovin 요구사항에 맞는 단일 HTML 플레이어블까지 완성. 홍보영상은 AI 생성 쇼츠 + 플레이 영상 결합. |
 | 2 | **Germy Pop** | `GermyPop_Lv5_AppLovin.html` | `videos/germypop.mp4` | https://play.google.com/store/apps/details?id=com.doubleugames.ngfe.grp2.gp&hl=ko | 두 번째 바이브코딩 프로젝트. 연출·애니메이션 작업 + Claude 바이브코딩으로 개발. 플레이어블은 인게임과 거의 동일, CTA까지 완성. 홍보영상은 AI 생성 쇼츠 + 플레이 영상 결합. |
 | 3 | **Wood Blast** | `Wood_Lv6_AppLovin.html` | 없음 | https://play.google.com/store/apps/details?id=com.doubleugames.ng.grp2.wbe | 팀 프로젝트. 팀 내 유일한 플레이어블 제작 가능 인력으로 플레이어블 단독 제작. Luna 7.2 사용, 인게임과 거의 동일하게 구현. |
+| 4 | **Wool N Blast** | `Wool_Lv1_AppLovin_build.html` | YouTube https://youtu.be/ADwlIGUQO6o (제3자 업로드 게임플레이, "플레이 영상" 라벨) | https://play.google.com/store/apps/details?id=com.doubleugames.ng.grp2.wnb | 팀 프로젝트. 인게임 연출용 애니메이션 제작 + 플레이어블 단독 제작. Luna 사용, 인게임과 거의 동일하게 구현. |
 
 - Hero에 Leon Out 트레일러가 있으므로 이 섹션이 첫 스크롤에 바로 보여야 함. 폰 프레임 3개는 뷰포트 진입 시 iframe 로드.
 
@@ -98,6 +100,7 @@ Leon Out과 플레이어블 3종 외 나머지 프로젝트. 카드 또는 한 �
 - 이메일: luckyho8@naver.com
 - GitHub: https://github.com/luckyho8
 - 그 외 링크(ArtStation, LinkedIn 등): TODO — 있으면 추가
+- 휴대폰 번호는 노출하지 않음 (사용자 결정, 이력서에만 기재).
 
 ## 기술 요구사항
 
@@ -126,6 +129,8 @@ if (typeof window.mraid === 'undefined') {
 </script>
 ```
 - Wood Blast는 Luna 7.2 export물이라 mraid 사용 방식이 다를 수 있음. 세 파일 모두 열어서 실제로 호출하는 mraid 메서드를 grep 후, 스텁에 빠진 게 있으면 추가.
+- 실제 삽입된 스텁은 위 예시를 확장한 버전: `getMraidAdData` 추가, 리스너 보관, 페이지 전용 `mraid._setViewable(bool)` 추가. main.js가 폰 프레임이 화면 밖(30% 미만 노출)·탭 숨김·영상 모달 열림일 때 false를 보내 Luna가 `luna:pause`로 멈추게 함 (게임 로직 수정 없음).
+- Wool N Blast는 로드 즉시 시작·BGM 재생되므로 `data-click-to-start`: "Tap to Play" 클릭 시에만 iframe 로드.
 - 3개 iframe 동시 로드는 무거우므로 뷰포트 진입 시(IntersectionObserver) 로드.
 - 각 폰 프레임에 "Restart" 버튼 (iframe src 재할당).
 
@@ -158,4 +163,4 @@ if (typeof window.mraid === 'undefined') {
 - React/Vue/빌드 도구 도입.
 - 배경 애니메이션, 커서 효과, 스크롤 하이재킹.
 - 플레이어블 내부 게임 로직 수정 (스텁 삽입 외).
-- 옛 쇼릴 영상(2015 이전) 포함하지 않기 — DoubleU 이전 경력은 텍스트 타임라인만.
+- 옛 쇼릴 영상(2015 이전) 임베드하지 않기 — DoubleU 이전 경력은 텍스트 타임라인만. 예외: About 소개 문단에 게임사 입사 당시 포트폴리오(https://youtu.be/_IH1l6OJHy8) 텍스트 링크 하나만 둠 (사용자 결정).

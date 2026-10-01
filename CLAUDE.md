@@ -146,7 +146,7 @@ if (typeof window.mraid === 'undefined') {
 ### 기타
 - `<meta name="viewport" content="width=device-width, initial-scale=1">`
 - OG 태그 (title, description; og:image는 images/ 준비되면).
-- 외부 의존성 최소화. 폰트 외 CDN 스크립트 사용하지 않기.
+- 외부 의존성 최소화. 폰트 외 CDN 스크립트 사용하지 않기. 예외: 방문 통계용 GoatCounter 스크립트(`gc.zgo.at/count.js`, `</body>` 직전) — 사용자 결정.
 - favicon 간단히 하나.
 - 한/영 병기 여부는 사용자 확인 (기본: 한국어 본문, 게임명·라벨은 영문).
 

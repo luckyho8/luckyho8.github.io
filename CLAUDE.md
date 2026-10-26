@@ -28,13 +28,15 @@
 ├── playables/
 │   ├── BallSort_Lv79_AppLovin.html
 │   ├── GermyPop_Lv5_AppLovin.html
+│   ├── LeonGo_AppLovin.html
 │   ├── Wood_Lv6_AppLovin.html
 │   └── Wool_Lv1_AppLovin_build.html
 ├── videos/
 │   ├── ballsort.mp4
 │   ├── germypop.mp4
-│   └── bisonblast.mp4
-├── images/          (1차엔 비워둠. 썸네일·프로필은 추후)
+│   ├── bisonblast.mp4
+│   └── leongo.mp4
+├── images/          (leongo-poster.jpg. 썸네일·프로필은 추후)
 └── assets/
     ├── style.css
     └── main.js
@@ -46,10 +48,14 @@
 ### 1. Hero
 - 이름: **이춘호**
 - 한 줄 소개 (후보, 최종 문구는 사용자 확인): `3D Animator · Unity · DoubleU Games 2016–`
-- 메인 비주얼: **Leon Out 트레일러** YouTube 임베드 (https://youtu.be/D0AmGTX-dyI). 라벨: "현재 서비스 중 · 애니메이션 연출 담당".
-- 스토어 링크: https://play.google.com/store/apps/details?id=com.doubleugames.ngfe.lo&hl=ko
-- 짧은 설명: 애니메이션 연출 담당. 서비스 중이며 계속 개발 진행 중.
-- 히어로 하단에 "Playables ↓" 정도의 스크롤 유도.
+- 메인: **Leon Go!** (2026-10 교체, 이전엔 Leon Out). 왼쪽 텍스트 + 오른쪽에 플레이어블 폰 프레임과 세로 홍보영상 나란히 (1280px 이하: 텍스트 위·미디어 아래, 640px 이하: 세로로 쌓기).
+  - 플레이어블 `playables/LeonGo_AppLovin.html` (로드 즉시 시작, 클릭 전엔 소리 없음 → 자동 로드 유지).
+  - 영상 `videos/leongo.mp4` (원본 LeonGo_Promo_Shorts_v2.mp4 41 MB → CRF 28, 14 MB), 포스터 `images/leongo-poster.jpg`, 자동재생 없음. 영상 재생 중엔 플레이어블 일시정지. YouTube 링크 생기면 교체 검토.
+  - 스토어: https://play.google.com/store/apps/details?id=com.doubleugames.ng.grp2.la
+  - 라벨 "신규 출시 · 1인 개발". 내용: Leon Out 리소스 기반 Arrow 퍼즐. Unity + Claude 바이브코딩으로 기획~출시 약 한 달 혼자 진행. 봇 시뮬레이션 난이도 밸런스, 봇 크래시 테스트 QA, 플레이어블 인게임과 거의 동일.
+- Leon Out은 Projects 섹션 맨 위로 이동 (트레일러 https://youtu.be/D0AmGTX-dyI, 라벨 "현재 서비스 중 · 애니메이션 연출 담당", 스토어 https://play.google.com/store/apps/details?id=com.doubleugames.ngfe.lo&hl=ko).
+- 히어로 하단에 "Projects ↓" 스크롤 유도.
+- 섹션 순서 (사용자 결정, 2026-10): Hero → DoubleU Games Projects → Playables → About → Contact. 재직 중인 회사 프로젝트를 우선. 상단 메뉴도 Projects, Playables 순.
 
 ### 2. Playables (AppLovin 대응 단일 HTML)
 폰 프레임 4개 가로 배치 (1280px 이하 2열, 900px 이하 1열). 각 카드: 폰 프레임(iframe) / 게임명 / 담당 범위 / 스토어 링크 / 홍보영상(있는 경우).
@@ -86,13 +92,13 @@ Leon Out과 플레이어블 3종 외 나머지 프로젝트. 카드 또는 한 �
 |---|---|---|---|
 | 2006 | 마피아산업디자인 전문학원 | Maya 과정 | Maya |
 | 2006.06 – 2007.06 | lst.애니메이션 | SBS 방영 「크리스탈요정 지스쿼드」 | Maya |
-| 2007.07 – 2007.09 | 올리브스튜디오 | 「빌드3」 VFX, 영화·뮤직비디오 애니메이션 | 3ds Max |
+| 2007.07 – 2007.09 | 올리브스튜디오 | 「빌드3」 VFX, 영화·뮤직비디오 애니메이션 | Maya |
 | 2007.10 – 2010.07 | 엠게임 | 신규2·워베인 서비스, 캐릭터 애니메이션 세팅 R&D | 3ds Max |
 | 2010.08 – 2014.02 | 웹젠 | A1.5 제노사이드, A2 아크로드2 서비스, 캐릭터 애니메이션 | 3ds Max |
 | 2014.02 – 2014.04 | 웹젠엔플레이 아트센터 | Mu2 및 신규 MST 몬스터 애니메이션 세팅 | 3ds Max |
 | 2014.05 – 2015.04 | 스타트업 | 「군단을 부탁해」(가제) 캐릭터 세팅·애니·이펙트 | 3ds Max, Unity 4.6 |
 | 2015.06 – 2016.06 | 펍지 (구 블루홀지노) | 데빌리언 모바일, 애니 파트장 | 3ds Max, Unity 5.2.4 |
-| 2016.06 – 현재 | **DoubleU Games** | Undead Nation, Undead World, Divine Match, Leon Out, Bison Blast, Ball Sort, Germy Pop, Wood Blast | Unity, 3ds Max, Claude |
+| 2016.06 – 현재 | **DoubleU Games** | Undead Nation, Undead World, Divine Match, Leon Out, Leon Go!, Bison Blast, Ball Sort, Germy Pop, Wood Blast | Unity, 3ds Max, Claude |
 
 - 회사명 표기(펍지/블루홀지노 등)는 사용자에게 최종 확인.
 
@@ -148,6 +154,7 @@ if (typeof window.mraid === 'undefined') {
 - OG 태그 (title, description; og:image는 images/ 준비되면).
 - 외부 의존성 최소화. 폰트 외 CDN 스크립트 사용하지 않기. 예외: 방문 통계용 GoatCounter 스크립트(`gc.zgo.at/count.js`, `</body>` 직전) — 사용자 결정.
 - favicon 간단히 하나.
+- CSS/JS 링크에 `?v=N` 캐시 버스팅. style.css·main.js 수정 시 N 올리기.
 - 한/영 병기 여부는 사용자 확인 (기본: 한국어 본문, 게임명·라벨은 영문).
 
 ## 작업 순서 (1차)

@@ -13,15 +13,15 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
 
 <header class="topbar">
   <a class="topbar__name" href="#top">이춘호</a>
   <nav class="topbar__nav">
-    <a href="#playables">Playables</a>
     <a href="#projects">Projects</a>
+    <a href="#playables">Playables</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -35,24 +35,117 @@
       <h1 class="hero__name">이춘호</h1>
       <p class="hero__tagline">3D Animator · Unity · DoubleU Games 2016–</p>
       <div class="hero__feature">
-        <p class="label">현재 서비스 중 · 애니메이션 연출 담당</p>
-        <h2 class="hero__game">Leon Out</h2>
-        <p class="muted">애니메이션 연출 담당. 서비스 중이며 계속 개발 진행 중.</p>
-        <a class="link" href="https://play.google.com/store/apps/details?id=com.doubleugames.ngfe.lo&amp;hl=ko" target="_blank" rel="noopener">Google Play ↗</a>
+        <p class="label">신규 출시 · 1인 개발</p>
+        <h2 class="hero__game">Leon Go!</h2>
+        <p class="muted">Leon Out 리소스를 바탕으로 만든 Arrow 퍼즐 게임. Unity + Claude 바이브코딩으로 기획부터 출시까지 약 한 달간 혼자 진행했습니다.</p>
+        <ul class="hero__points">
+          <li>기획 · 개발 · 출시</li>
+          <li>스테이지 제작, 봇 시뮬레이션으로 난이도 밸런스 조정</li>
+          <li>봇을 이용한 크래시 테스트 등 QA</li>
+          <li>AppLovin 플레이어블 — 인게임과 거의 동일하게 구현</li>
+        </ul>
+        <a class="link" href="https://play.google.com/store/apps/details?id=com.doubleugames.ng.grp2.la&amp;hl=ko" target="_blank" rel="noopener">Google Play ↗</a>
       </div>
     </div>
     <div class="hero__media">
-      <div class="embed embed--16x9">
-        <iframe src="https://www.youtube-nocookie.com/embed/D0AmGTX-dyI?rel=0"
-                title="Leon Out trailer"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+      <div class="hero__item card">
+        <div class="phone">
+          <div class="phone__screen">
+            <iframe data-src="playables/LeonGo_AppLovin.html" title="Leon Go! playable" allow="autoplay; fullscreen"></iframe>
+            <div class="phone__placeholder">Loading…</div>
+          </div>
+          <span class="phone__island" aria-hidden="true"></span>
+        </div>
+        <button class="btn-restart" type="button">↻ Restart</button>
+      </div>
+      <div class="hero__item">
+        <video class="hero__video" controls playsinline preload="none" poster="images/leongo-poster.jpg" src="videos/leongo.mp4" title="Leon Go! 홍보영상"></video>
+        <p class="media-caption">홍보영상</p>
       </div>
     </div>
-    <a class="scroll-cue" href="#playables">Playables ↓</a>
+    <a class="scroll-cue" href="#projects">Projects ↓</a>
   </section>
 
-  <!-- 2. Playables -->
+  <!-- 2. DoubleU Games Projects -->
+  <section class="section" id="projects">
+    <div class="section__head">
+      <h2 class="section__title">DoubleU Games Projects</h2>
+      <p class="muted">2016 – 현재</p>
+    </div>
+
+    <div class="projects">
+      <article class="project">
+        <div class="project__text">
+          <p class="label">현재 서비스 중 · 애니메이션 연출 담당</p>
+          <h3 class="project__title">Leon Out</h3>
+          <p class="card__desc">애니메이션 연출 담당. 서비스 중이며 계속 개발 진행 중.</p>
+          <div class="card__links">
+            <a class="link" href="https://play.google.com/store/apps/details?id=com.doubleugames.ngfe.lo&amp;hl=ko" target="_blank" rel="noopener">Google Play ↗</a>
+          </div>
+        </div>
+        <div class="project__media">
+          <div class="embed embed--16x9">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/D0AmGTX-dyI?rel=0" title="Leon Out trailer" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__text">
+          <h3 class="project__title">Bison Blast</h3>
+          <p class="card__desc">애니메이션·연출, 바이브코딩 진행.</p>
+          <p class="card__note">홍보영상: AI 생성 쇼츠 + 플레이 영상 결합</p>
+          <div class="card__links">
+            <a class="link" href="https://play.google.com/store/apps/details?id=com.doubleugames.ng.bf&amp;hl=ko" target="_blank" rel="noopener">Google Play ↗</a>
+            <button class="link js-video" type="button" data-video="videos/bisonblast.mp4" data-title="Bison Blast">▶ 홍보영상</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__text">
+          <p class="label">서비스 종료 · Facebook 정식 런칭</p>
+          <h3 class="project__title">Undead Nation: Last Shelter</h3>
+          <p class="card__desc">DoubleU 첫 프로젝트. Unity. 애니메이션·연출 전 과정 제작.</p>
+        </div>
+        <div class="project__media">
+          <div class="embed embed--16x9">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/F8B4dc8Tn_o?rel=0" title="Undead Nation gameplay" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="media-caption">Gameplay (archived)</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__text">
+          <p class="label">서비스 종료 · 소프트 런칭</p>
+          <h3 class="project__title">Undead World: Hero Survival</h3>
+          <p class="card__desc">Unity. 애니메이션·연출 담당.</p>
+        </div>
+        <div class="project__media">
+          <div class="embed embed--16x9">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/KtJeXPXEG2A?rel=0" title="Undead World video" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__text">
+          <p class="label">서비스 종료</p>
+          <h3 class="project__title">Divine Match</h3>
+          <p class="card__desc">DoubleU 첫 모바일 프로젝트 (Match-3). 애니메이션·연출 담당.</p>
+        </div>
+        <div class="project__media">
+          <div class="embed embed--16x9">
+            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/XAOucDezQxA?rel=0" title="Divine Match gameplay" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="media-caption">Gameplay (archived)</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. Playables -->
   <section class="section playables" id="playables">
     <div class="section__head">
       <h2 class="section__title">Playables</h2>
@@ -132,69 +225,6 @@
     </div>
   </section>
 
-  <!-- 3. DoubleU Games Projects -->
-  <section class="section" id="projects">
-    <div class="section__head">
-      <h2 class="section__title">DoubleU Games Projects</h2>
-      <p class="muted">2016 – 현재</p>
-    </div>
-
-    <div class="projects">
-      <article class="project">
-        <div class="project__text">
-          <h3 class="project__title">Bison Blast</h3>
-          <p class="card__desc">애니메이션·연출, 바이브코딩 진행.</p>
-          <p class="card__note">홍보영상: AI 생성 쇼츠 + 플레이 영상 결합</p>
-          <div class="card__links">
-            <a class="link" href="https://play.google.com/store/apps/details?id=com.doubleugames.ng.bf&amp;hl=ko" target="_blank" rel="noopener">Google Play ↗</a>
-            <button class="link js-video" type="button" data-video="videos/bisonblast.mp4" data-title="Bison Blast">▶ 홍보영상</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project__text">
-          <p class="label">서비스 종료 · Facebook 정식 런칭</p>
-          <h3 class="project__title">Undead Nation: Last Shelter</h3>
-          <p class="card__desc">DoubleU 첫 프로젝트. Unity. 애니메이션·연출 전 과정 제작.</p>
-        </div>
-        <div class="project__media">
-          <div class="embed embed--16x9">
-            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/F8B4dc8Tn_o?rel=0" title="Undead Nation gameplay" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <p class="media-caption">Gameplay (archived)</p>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project__text">
-          <p class="label">서비스 종료 · 소프트 런칭</p>
-          <h3 class="project__title">Undead World: Hero Survival</h3>
-          <p class="card__desc">Unity. 애니메이션·연출 담당.</p>
-        </div>
-        <div class="project__media">
-          <div class="embed embed--16x9">
-            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/KtJeXPXEG2A?rel=0" title="Undead World video" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project__text">
-          <p class="label">서비스 종료</p>
-          <h3 class="project__title">Divine Match</h3>
-          <p class="card__desc">DoubleU 첫 모바일 프로젝트 (Match-3). 애니메이션·연출 담당.</p>
-        </div>
-        <div class="project__media">
-          <div class="embed embed--16x9">
-            <iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/XAOucDezQxA?rel=0" title="Divine Match gameplay" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <p class="media-caption">Gameplay (archived)</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <!-- 4. About / Career -->
   <section class="section" id="about">
     <div class="section__head">
@@ -212,7 +242,7 @@
           <span class="timeline__period">2016.06 – 현재</span>
           <div>
             <p class="timeline__org">DoubleU Games</p>
-            <p class="timeline__desc">Undead Nation, Undead World, Divine Match, Leon Out, Bison Blast, Ball Sort, Germy Pop, Wood Blast, Wool N Blast</p>
+            <p class="timeline__desc">Undead Nation, Undead World, Divine Match, Leon Out, Leon Go!, Bison Blast, Ball Sort, Germy Pop, Wood Blast, Wool N Blast</p>
             <p class="timeline__tools">Unity, 3ds Max, Claude</p>
           </div>
         </li>
@@ -311,7 +341,7 @@
   </div>
 </dialog>
 
-<script src="assets/main.js"></script>
+<script src="assets/main.js?v=2"></script>
 <script data-goatcounter="https://luckyho8.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>

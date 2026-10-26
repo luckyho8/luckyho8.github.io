@@ -88,6 +88,27 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .hero__tagline { margin-top: 14px; font-size: 17px; color: var(--muted); }
 .hero__feature { margin-top: 48px; display: grid; gap: 8px; justify-items: start; }
 .hero__game { font-size: 22px; font-weight: 600; }
+.hero__points { margin: 4px 0 6px; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; color: #c5c7cc; }
+.hero__points li::marker { color: var(--muted); }
+
+.hero__media {
+  --hero-h: min(72vh, 620px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+.hero__item { display: grid; gap: 10px; justify-items: center; }
+.hero__media .phone { width: auto; max-width: none; height: var(--hero-h); margin-bottom: 0; }
+.hero__video {
+  display: block;
+  height: var(--hero-h);
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  background: #000;
+  object-fit: cover;
+}
+.hero__item .media-caption { margin-top: 0; }
 .scroll-cue {
   position: absolute;
   left: var(--gutter);
@@ -248,6 +269,15 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 1280px) {
   .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 40px; }
   .phone { max-width: 320px; }
+  .hero { grid-template-columns: 1fr; gap: 48px; }
+  .hero__feature { max-width: 640px; }
+}
+
+@media (max-width: 640px) {
+  .hero__media { flex-direction: column; align-items: center; gap: 48px; }
+  .hero__item { width: 100%; max-width: 320px; }
+  .hero__media .phone { width: 100%; height: auto; }
+  .hero__video { width: 100%; height: auto; }
 }
 
 @media (max-width: 1100px) {

@@ -1,13 +1,15 @@
 (() => {
   const phones = [...document.querySelectorAll('.phone')];
   const modal = document.getElementById('video-modal');
+  const heroVideo = document.querySelector('.hero__video');
 
   // ---------- Playables ----------
   const inView = new Map(phones.map((p) => [p, false]));
 
   // Tell the playable (via the page's mraid stub) whether it's viewable; Luna pauses itself when it isn't.
   const sync = (phone) => {
-    const viewable = inView.get(phone) && !document.hidden && !modal.open;
+    const videoPlaying = heroVideo && !heroVideo.paused;
+    const viewable = inView.get(phone) && !document.hidden && !modal.open && !videoPlaying;
     try { phone.querySelector('iframe').contentWindow.mraid._setViewable(viewable); } catch (e) { /* not loaded yet */ }
   };
   const syncAll = () => phones.forEach(sync);
@@ -40,6 +42,7 @@
 
   phones.forEach((p) => { loader.observe(p); watcher.observe(p); });
   document.addEventListener('visibilitychange', syncAll);
+  if (heroVideo) ['play', 'pause', 'ended'].forEach((ev) => heroVideo.addEventListener(ev, syncAll));
 
   // Click-to-start
   document.querySelectorAll('.phone__start').forEach((btn) => {
@@ -64,7 +67,11 @@
   const yt = modal.querySelector('.video-modal__yt');
   const title = modal.querySelector('.video-modal__title');
 
-  const open = () => { modal.showModal(); syncAll(); };
+  const open = () => {
+    if (heroVideo) heroVideo.pause();
+    modal.showModal();
+    syncAll();
+  };
   const close = () => modal.close();
 
   document.querySelectorAll('.js-video').forEach((btn) => {

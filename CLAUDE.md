@@ -52,7 +52,7 @@
   - 플레이어블 `playables/LeonGo_AppLovin.html` (로드 즉시 시작, 클릭 전엔 소리 없음 → 자동 로드 유지).
   - 영상 `videos/leongo.mp4` (원본 LeonGo_Promo_Shorts_v2.mp4 41 MB → CRF 28, 14 MB), 포스터 `images/leongo-poster.jpg`, 자동재생 없음. 영상 재생 중엔 플레이어블 일시정지. YouTube 링크 생기면 교체 검토.
   - 스토어: https://play.google.com/store/apps/details?id=com.doubleugames.ng.grp2.la
-  - 라벨 "신규 출시 · 1인 개발". 내용: Leon Out 리소스 기반 Arrow 퍼즐. Unity + Claude 바이브코딩으로 기획~출시 약 한 달 혼자 진행. 봇 시뮬레이션 난이도 밸런스, 봇 크래시 테스트 QA, 플레이어블 인게임과 거의 동일.
+  - 라벨 "신규 출시" (1인 개발 표기 안 함 — 협업 있음). 내용: Leon Out·Bison Blast 리소스 기반 Arrow 퍼즐. Unity + Claude 바이브코딩으로 기획~출시 약 한 달. 배경 링 모델링은 3D 배경 모델러, 이펙트 추가·편집은 이펙트 디자이너와 협업 (문구에 명시). 봇 시뮬레이션 난이도 밸런스, 봇 크래시 테스트 QA, 플레이어블 인게임과 거의 동일.
 - Leon Out은 Projects 섹션 맨 위로 이동 (트레일러 https://youtu.be/D0AmGTX-dyI, 라벨 "현재 서비스 중 · 애니메이션 연출 담당", 스토어 https://play.google.com/store/apps/details?id=com.doubleugames.ngfe.lo&hl=ko).
 - 히어로 하단에 "Projects ↓" 스크롤 유도.
 - 섹션 순서 (사용자 결정, 2026-10): Hero → DoubleU Games Projects → Playables → About → Contact. 재직 중인 회사 프로젝트를 우선. 상단 메뉴도 Projects, Playables 순.
